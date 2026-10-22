@@ -1,0 +1,175 @@
+body.celebration-page {
+  background:radial-gradient(ellipse at 50% 20%,#f3e4ff 0,transparent 42%),radial-gradient(ellipse at 20% 75%,#ffe5ee 0,transparent 35%),var(--cream)
+}
+
+.celebration-main {
+  position:relative;
+  min-height:calc(100vh - 155px);
+  display:grid;
+  place-items:center;
+  padding:20px 0 55px;
+  overflow:hidden
+}
+
+.celebration-glow {
+  position:absolute;
+  width:540px;
+  height:540px;
+  border-radius:50%;
+  background:radial-gradient(circle,#f7d8e8a8,transparent 68%);
+  pointer-events:none;
+  animation:glow-pulse 4s infinite
+}
+
+@keyframes glow-pulse {
+  50% {
+  transform:scale(1.1);
+  opacity:.7
+}
+
+
+}
+
+.final-card {
+  position:relative;
+  z-index:2;
+  width:min(690px,100%);
+  padding:46px 28px 34px;
+  text-align:center;
+  background:#ffffffb8;
+  border:1px solid white;
+  box-shadow:0 25px 90px #a36d8a19;
+  border-radius:30px;
+  backdrop-filter:blur(12px)
+}
+
+.crown {
+  color:var(--rose);
+  letter-spacing:.15em;
+  font-size:24px;
+  margin-bottom:10px;
+  animation:twinkle 2s infinite alternate
+}
+
+.final-card h1 {
+  font:500 clamp(48px,7vw,78px)/1.02 var(--serif);
+  letter-spacing:-.05em;
+  margin:14px 0 20px
+}
+
+.final-card h1 em {
+  color:var(--rose);
+  font-weight:500
+}
+
+.final-message {
+  max-width:470px;
+  margin:0 auto 24px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.9
+}
+
+.birthday-stamp {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  align-items:center;
+  width:180px;
+  height:180px;
+  justify-content:center;
+  margin:25px auto 28px;
+  border:1px solid #dba2bb;
+  border-radius:50%;
+  color:#b65c85;
+  transform:rotate(-7deg);
+  background:linear-gradient(135deg,#fff9fb,#fce5ee);
+  box-shadow:inset 0 0 0 7px #fff9,inset 0 0 0 8px #edc4d5;
+  animation:stamp-in .9s .4s both
+}
+
+@keyframes stamp-in {
+  from {
+  opacity:0;
+  transform:rotate(-25deg) scale(.5)
+}
+
+to {
+  opacity:1;
+  transform:rotate(-7deg) scale(1)
+}
+
+
+}
+
+.birthday-stamp span {
+  font-size:7px;
+  letter-spacing:.15em;
+  font-weight:700
+}
+
+.birthday-stamp strong {
+  font:600 20px/1.2 var(--serif);
+  letter-spacing:.03em
+}
+
+.final-links {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:26px;
+  color:#9a7b90;
+  font-size:10px
+}
+
+.final-links a:hover {
+  color:var(--deep)
+}
+
+.confetti-field {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden
+}
+
+.confetti-piece {
+  position:absolute;
+  top:-20px;
+  width:8px;
+  height:13px;
+  border-radius:3px;
+  animation:confetti-fall var(--fall-time,3s) linear forwards;
+  transform:rotate(var(--rotation,0deg))
+}
+
+@keyframes confetti-fall {
+  to {
+  transform:translate3d(var(--drift,20px),110vh,0) rotate(760deg);
+  opacity:.2
+}
+
+
+}
+
+@media(max-width:600px) {
+  .final-card {
+  padding:35px 18px 28px
+}
+
+.birthday-stamp {
+  width:155px;
+  height:155px
+}
+
+.birthday-stamp strong {
+  font-size:18px
+}
+
+.final-links {
+  gap:7px
+}
+
+
+}
